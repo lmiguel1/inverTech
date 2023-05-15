@@ -13,6 +13,7 @@ import { FirebaseErrorCodeService } from 'src/app/services/firebase-error-code.s
 })
 export class LoginComponent {
   userLogin: FormGroup;
+  authfirebase: any;
 
   constructor(
     private fb: FormBuilder,
@@ -40,5 +41,7 @@ export class LoginComponent {
           this.toastr.error(this.firebaseError.codeError(error.code), 'Error');
         })        
     }
+
+    
 }
   

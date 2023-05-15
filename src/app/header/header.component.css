@@ -6,7 +6,7 @@
     justify-content: space-between;
 }
 
-#btnregistro, #btningreso, #btnenviar, #btnsalir{
+#btnregistro, #btningreso, #btnenviar, #btnsalir, #btnajustes{
     color: #0033A0;
     border: none;
     background-color: transparent;
@@ -14,7 +14,7 @@
     font-size: var( --font-size-lg);
     border-radius: 3px;
 }
-#btningreso, #btnenviar, #btnsalir:active{
+#btningreso, #btnenviar, #btnsalir:active, #btnajustes:active{
     background-color: #E3E829;
     padding-left: 10px;
     padding-right: 10px;
