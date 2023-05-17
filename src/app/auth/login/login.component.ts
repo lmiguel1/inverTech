@@ -41,7 +41,8 @@ export class LoginComponent {
           this.toastr.error(this.firebaseError.codeError(error.code), 'Error');
         })        
     }
-
+    
+   
     
 }
   
