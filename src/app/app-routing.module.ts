@@ -17,7 +17,7 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
 
 const routes: Routes = [
   //aqui se indican las rutas
-  { path: '', component: MainPageComponent},
+  { path: '', component: LearningPathComponent},
   { path: 'mainpage', component: MainPageComponent},
   { path: 'profiling', component: ProfilingComponent},
   { path: 'learning', component: LearningPathComponent },

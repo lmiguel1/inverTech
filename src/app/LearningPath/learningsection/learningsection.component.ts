@@ -1,17 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { appCheckInstance$ } from '@angular/fire/app-check';
 
 @Component({
   selector: 'app-learningsection',
   templateUrl: './learningsection.component.html',
   styleUrls: ['./learningsection.component.css']
 })
-export class LearningsectionComponent implements OnInit {
+export class LearningsectionComponent implements OnInit 
+{
   public chart: any;
 
-  constructor() { }
+  mostrar: boolean = false;
+
+  constructor( ) { 
+  }
   ngOnInit() {
     this.createChart();
+    
+    
   }
 
   showGrafic() {
@@ -38,5 +45,12 @@ export class LearningsectionComponent implements OnInit {
       }
 
     });
-  }
+    
+  } 
+
+toggleModal() {
+  this.mostrar=!this.mostrar;
+  console.log (this.mostrar)
+}  
+
 }

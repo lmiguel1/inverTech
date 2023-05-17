@@ -1,3 +1,6 @@
+<body>
+    
+
 <section>
 
     <div class="contenedor-acordeon">
@@ -117,3 +120,21 @@
         </div>
     </aside>
 </section>
+
+<button (click)="toggleModal()" id="open">7 days trial</button>
+
+<div *ngIf="mostrar" class="body2">
+
+<div class="modal-container" id="modal_container">
+    <div class="modal">
+        <h1>Ventana modal</h1>
+
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, asperiores inventore provident id quaerat quo temporibus fugiat cupiditate, error ipsa repellat obcaecati ullam modi fugit aspernatur.
+        </p>
+        <button id="close">Cerrar</button>
+    </div>
+</div>
+</div>
+
+</body>

@@ -9,6 +9,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 
 
+
 //Componentes
 import { AppComponent } from './app.component';
 import { HeaderuserinfoComponent } from './headeruserinfo/headeruserinfo.component';
@@ -28,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from './environments/environment';
 import { RetrievePasswordComponent } from './auth/retrieve-password/retrieve-password.component';
 import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
+
+
 
 @NgModule({
   declarations: [
@@ -57,9 +60,12 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+  
     
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

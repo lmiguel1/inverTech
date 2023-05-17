@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-learning-path',
   templateUrl: './learning-path.component.html',
