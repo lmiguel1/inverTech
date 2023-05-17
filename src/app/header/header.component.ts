@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,11 +12,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  constructor(private auth: AuthService, private router: Router){}
+  constructor(private auth: AuthService, private router: Router, private toastr: ToastrService){}
 
  logout(){
   this.auth.logout();
   this.router.navigate(['/login'])
+  this.toastr.info('Sesión terminada');
+      return;
 
  }
 
