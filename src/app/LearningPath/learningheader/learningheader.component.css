@@ -27,6 +27,10 @@ h1 {
     
 }
 
+.img2:hover {
+    background: #694f8d;
+}
+
 .linea {
     border-top: 3px solid rgb(235, 225, 225);
     height: 30px;

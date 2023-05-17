@@ -214,6 +214,11 @@ img {
     font-size: 17px;
     padding: 10px 25px;
     color: #fff;
+    
+}
+
+#open:hover {
+    background: #694f8d;
 }
 
 .modal-container {
