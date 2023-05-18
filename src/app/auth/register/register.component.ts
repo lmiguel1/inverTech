@@ -6,6 +6,10 @@ import { FormGroup } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastrService } from 'ngx-toastr';
 import { FirebaseErrorCodeService } from 'src/app/services/firebase-error-code.service';
+import { UserI } from 'src/app/models.model';
+import { AuthService } from 'src/app/auth.service';
+import { FirestoreService } from 'src/app/firestore.service';
+
 
 
 @Component({
@@ -23,7 +27,9 @@ export class RegisterComponent{
     private afAuth: AngularFireAuth,
     private toastr: ToastrService,
     private router: Router,
-    private firebaseError: FirebaseErrorCodeService
+    private firebaseError: FirebaseErrorCodeService,
+    private auth: AuthService,
+    private firestore: FirestoreService,
     ){
     this.userRegister = this.fb.group({
       name: ['', Validators.required],
@@ -33,11 +39,19 @@ export class RegisterComponent{
     })
   } 
 
-  registrar() {
+  async registrar() {
     const name = this.userRegister.value.name;
     const email = this.userRegister.value.email;
     const password = this.userRegister.value.password;
     const repetirPassword = this.userRegister.value.repetirPassword;   
+    const res = await this.auth.registrarUser(this.datos);
+
+    if (res) {
+      const path = "Usuarios";
+      const id: any = res.user?.uid;
+      this.datos.uid = id;
+      await this.firestore.createDoc(this.datos, path, id)
+    }
 
     if(password !== repetirPassword ){
       this.toastr.error('Las contraseñas ingresadas deben ser iguales', 'Error');
@@ -59,5 +73,17 @@ export class RegisterComponent{
         this.router.navigate(['/login']);
     });
   }
+
+  datos: UserI= {
+
+    nombre: '',
+    edad:  0,
+    correo: '' ,
+    uid: '' ,
+    password: '' ,
+    perfil: 'visitante',
+    
+  }
+
 }
 
