@@ -205,15 +205,16 @@ img {
 }
 
 #open{
-    background-color: rgb(9, 203, 38);
+    background-color: rgb(6, 142, 27);
     border: 0;
-    border-radius: 2px;
+    border-radius: 6px;
     box-shadow: 0 2px 4px rgb(0,0,0,0.02);
     margin-top: 20px;
     margin-left: 2px;
     font-size: 17px;
     padding: 10px 25px;
     color: #fff;
+    margin-bottom: 20px;
     
 }
 
@@ -221,23 +222,27 @@ img {
     background: #694f8d;
 }
 
-.modal-container {
-    display:flex;
-    background-color: rgb(0,0,0,0.03);
-    position: fixed;
-    pointer-events: none;
-    justify-content: center;
-    margin-top: 5px;
-}
+
 
 
 .modal {
-    background-color: #d7cfcf;
+    background-color: rgb(234, 245, 216);
     width: 600px;
     max-width: 100%;
     padding: 30px 50px;
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(51, 50, 50, 0.02);
     
 }
 
+.paypalname {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif; 
+    color: rgb(105, 104, 104);
+}
+
+.description {
+    color: rgb(139, 136, 136);
+   text-align: center;
+   margin-bottom: 26px;
+}

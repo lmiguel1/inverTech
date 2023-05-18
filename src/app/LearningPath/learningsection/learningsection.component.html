@@ -121,18 +121,16 @@
     </aside>
 </section>
 
-<button (click)="toggleModal()" id="open">7 days trial</button>
+<button (click)="toggleModal()" id="open">¡7 days free trial! Últimos Días Gratis: Aprovecha al Máximo</button>
 
 <div *ngIf="mostrar" class="body2">
 
 <div class="modal-container" id="modal_container">
     <div class="modal">
-        <h1>Ventana modal</h1>
+        <h1 class="paypalname">Domina la inversión con nuestro curso completo</h1>
+        <p class="description">¡Descubre el camino hacia la libertad financiera! Atrévete a invertir en ti mismo y adquiere nuestro curso completo de inversión. ¡No pierdas la oportunidad de aprender las estrategias más efectivas y alcanzar tus metas económicas! ¡El conocimiento es el mejor activo que puedes adquirir!</p>
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
 
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, asperiores inventore provident id quaerat quo temporibus fugiat cupiditate, error ipsa repellat obcaecati ullam modi fugit aspernatur.
-        </p>
-        <button id="close">Cerrar</button>
     </div>
 </div>
 </div>

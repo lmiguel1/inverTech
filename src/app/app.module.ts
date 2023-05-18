@@ -7,7 +7,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 //Componentes
@@ -56,6 +56,7 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxPayPalModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule, // required animations module
