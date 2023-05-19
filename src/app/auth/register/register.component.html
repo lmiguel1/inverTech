@@ -2,14 +2,21 @@
 <form class="formulario" [formGroup]="userRegister" (ngSubmit)="registrar()">
   <h1>Regístrate</h1>
   <div class="contenedor">
-    <span *ngIf = "userRegister.get('name')?.hasError('required') && userRegister.get('name')?.touched" class="text-danger">
+    <span *ngIf = "userRegister.get('name')?.hasError('required') && userRegister.get('name')?.touched" class="text-danger" >
         El nombre es requerido        
     </span>
       <div class="input-contenedor">
           <i class="fa-solid fa-person icon form-control"></i>
-          <input type="text" placeholder="Nombre Completo" formControlName="name" >         
+          <input type="text" placeholder="Nombre Completo" formControlName="name" [(ngModel)]="datos.nombre">         
       </div>
-    <span *ngIf = "userRegister.get('email')?.hasError('required') && userRegister.get('email')?.touched" class="text-danger">
+      <span type="number" *ngIf = "userRegister.get('name')?.hasError('required') && userRegister.get('name')?.touched" class="text-danger">
+        Edad        
+    </span>
+      <div class="input-contenedor">
+          <i class="fa-solid fa-person icon form-control"></i>
+          <input type="text" placeholder="Edad" formControlName="edad" [(ngModel)]="datos.edad">         
+      </div>
+    <span *ngIf = "userRegister.get('email')?.hasError('required') && userRegister.get('email')?.touched" class="text-danger" >
         El correo es requerido
     </span>
       <span *ngIf = "userRegister.get('email')?.hasError('email') && userRegister.get('email')?.touched" class="text-danger">
@@ -17,9 +24,9 @@
     </span>    
       <div class="input-contenedor ">
           <i class="fa-solid fa-envelope icon form-control "></i>
-          <input type="text" placeholder="Correo Electrónico" formControlName="email" >
+          <input type="text" placeholder="Correo Electrónico" formControlName="email" [(ngModel)]="datos.correo">
       </div>
-      <span *ngIf = "userRegister.get('password')?.hasError('required') && userRegister.get('password')?.touched" class="text-danger">
+      <span *ngIf = "userRegister.get('password')?.hasError('required') && userRegister.get('password')?.touched" class="text-danger" >
         La contraseña es requerida
     </span>
       <span *ngIf = "userRegister.get('password')?.hasError('minlength') && userRegister.get('password')?.touched" class="text-danger">
@@ -27,7 +34,7 @@
     </span>
       <div class="input-contenedor">
           <i class="fa-solid fa-key icon form-control"></i>
-          <input type="password" placeholder="Contraseña" formControlName="password" >
+          <input type="password" placeholder="Contraseña" formControlName="password" [(ngModel)]="datos.password">
       </div>
       <div class="input-contenedor">
         <i class="fa-solid fa-key icon form-control"></i>
