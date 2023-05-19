@@ -5,8 +5,12 @@
     
         </div>
         <div>
-            <button id="btnregistro" routerLink="/register">Regístrate</button>
-            <button id="btningreso" routerLink="/login">Ingresa</button>
+            <button id="btnregistro" routerLink="/register" *ngIf="login == false">Regístrate</button>
+            <button id="btningreso" routerLink="/login" *ngIf="login == false">Ingresa</button>
+            <button id="btnajustes" routerLink="#" *ngIf="rol == 'admin' && login" >Ajustes</button>
+            <button id="btnajustes" routerLink="#" *ngIf="login && rol == 'visitante'">Perfil</button>
+            <button id="btnsalir" routerLink="#" (click)="logout()" *ngIf="login">Salir</button>
+            
         </div>
     </nav>
 </header>
