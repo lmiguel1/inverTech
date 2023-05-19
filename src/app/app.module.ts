@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
 
 
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 //Componentes
@@ -31,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from './environments/environment';
 import { RetrievePasswordComponent } from './auth/retrieve-password/retrieve-password.component';
 import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
+
 
 
 @NgModule({
@@ -57,14 +59,17 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxPayPalModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    FormsModule
+
     
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

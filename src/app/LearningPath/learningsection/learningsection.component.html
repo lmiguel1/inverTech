@@ -1,3 +1,6 @@
+<body>
+    
+
 <section>
 
     <div class="contenedor-acordeon">
@@ -117,3 +120,21 @@
         </div>
     </aside>
 </section>
+
+<button (click)="toggleModal()" id="open">Últimos Días Gratis: Haz click aquí para tu contenido Premium</button>
+
+<div *ngIf="mostrar" class="body2">
+
+<div class="modal-container" id="modal_container">
+    <div class="mcontainer">
+    <div class="modal">
+        <h1 class="paypalname">Domina la inversión con nuestro curso completo</h1>
+        <p class="description">¡Descubre el camino hacia la libertad financiera! Atrévete a invertir en ti mismo y adquiere nuestro curso completo de inversión. ¡No pierdas la oportunidad de aprender las estrategias más efectivas y alcanzar tus metas económicas! ¡El conocimiento es el mejor activo que puedes adquirir!</p>
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+    </div>
+</div>
+</div>
+</div>
+
+</body>
