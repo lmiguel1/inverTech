@@ -2,11 +2,6 @@
     "liveServer.settings.port": 5501,
     "cSpell.words": [
         "authfirebase",
-        "correo",
-        "datos",
-        "edad",
-        "Firestore",
-        "firestroe",
-        "nombre"
+        "perfil"
     ]
 }

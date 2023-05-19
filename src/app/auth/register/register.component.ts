@@ -51,6 +51,8 @@ export class RegisterComponent{
       const id: any = res.user?.uid;
       this.datos.uid = id;
       await this.firestore.createDoc(this.datos, path, id)
+      this.toastr.info('registrado con éxito');
+      this.router.navigate(['/login'])
     }
 
     if(password !== repetirPassword ){
@@ -61,9 +63,7 @@ export class RegisterComponent{
     this.afAuth.createUserWithEmailAndPassword(email, password)
     .then((user) =>{  
       this.verifyEmail();          
-    }).catch((error) =>{                   
-       this.toastr.error(this.firebaseError.codeError(error.code), 'Error');
-    });      
+    }) 
   }  
   verifyEmail(){
     this.afAuth.currentUser
@@ -73,6 +73,8 @@ export class RegisterComponent{
         this.router.navigate(['/login']);
     });
   }
+
+  
 
   datos: UserI= {
 

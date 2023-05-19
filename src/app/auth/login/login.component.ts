@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { LoginService } from 'src/app/services/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { FirebaseErrorCodeService } from 'src/app/services/firebase-error-code.service';
+import { DatasetController } from 'chart.js';
 
 @Component({
   selector: 'app-login',
@@ -30,13 +31,16 @@ export class LoginComponent {
     registar(){
       const email = this.userLogin.value.email;
       const password = this.userLogin.value.password;
+      this.toastr.info('Bienvenido al mundo del aprendizaje financiero, donde generarás valor mientras aprendes');
 
       this.afAuth.signInWithEmailAndPassword(email, password).then((user) =>{     
         if(user.user?.emailVerified){
           this.router.navigate(['/learning']);
+          
         }else{
-          this.router.navigate(['/verify-email']);
+          this.router.navigate(['/learning']);
         }
+        
         }).catch((error) => {
           this.toastr.error(this.firebaseError.codeError(error.code), 'Error');
         })        
@@ -45,4 +49,7 @@ export class LoginComponent {
    
     
 }
+  
+    
+
   
